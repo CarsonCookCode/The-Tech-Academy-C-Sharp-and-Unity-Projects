@@ -54,8 +54,8 @@ namespace Abstract_Class
                 Console.WriteLine(thing);
             }
 
-
-            //Console.WriteLine(myEmployee1 == myEmployee3);
+           
+            Console.WriteLine(myEmployee1.Id == myEmployee3.Id);
 
 
 
