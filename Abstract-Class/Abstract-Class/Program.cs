@@ -17,8 +17,10 @@ namespace Abstract_Class
                 LastName = "Student",
                 Hired = true,
                 Id = 1,
-                //Things = {"Stapler", "Paper"}
             };
+
+            myEmployee1.Things = new List<string>() { "car", "truck", "semi" };
+
 
             IQuittable myEmployee2 = new Employee<Person>() 
             { 
@@ -34,13 +36,26 @@ namespace Abstract_Class
                 LastName = "Student",
                 Hired = true,
                 Id = 3,
-                //Things = { 1, 2, 3 } 
             };
+
+            myEmployee3.Things = new List<int>() { 1, 2, 3 };
 
             myEmployee1.SayName();
 
+            Console.WriteLine("myEmployee1 things:");
+            foreach (string thing in myEmployee1.Things)
+            {
+                Console.WriteLine(thing);
+            }
 
-            Console.WriteLine(myEmployee1 == myEmployee3);
+            Console.WriteLine("myEmployee3 things:");
+            foreach (int thing in myEmployee3.Things)
+            {
+                Console.WriteLine(thing);
+            }
+
+
+            //Console.WriteLine(myEmployee1 == myEmployee3);
 
 
 
