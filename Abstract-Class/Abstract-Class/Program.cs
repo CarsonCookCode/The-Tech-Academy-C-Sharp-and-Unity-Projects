@@ -10,9 +10,15 @@ namespace Abstract_Class
     {
         static void Main(string[] args)
         {
-            Employee myEmployee = new Employee() {FirstName = "Sample", LastName = "Student" };
+            Employee myEmployee = new Employee() {FirstName = "Sample", LastName = "Student", Hired = true};
+
+            IQuittable myEmployee2 = new Employee() { FirstName = "Sample", LastName = "Student", Hired = true };
 
             myEmployee.SayName();
+
+            myEmployee2.Quit();
+
+            Console.Write("Hired Status: " + myEmployee2.Hired);
 
             Console.ReadLine();
 
