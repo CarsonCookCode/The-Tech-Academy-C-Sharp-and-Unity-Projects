@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Abstract_Class
 {
-    public class Employee : Person, IQuittable
+    public class Employee<T> : Person, IQuittable
     {
         public bool Hired { get; set; }
         public int Id { get; set; }
+        public List<T> Things { get; set; }
 
         public override void SayName()
         {
@@ -18,16 +19,31 @@ namespace Abstract_Class
            
         }
 
-        public static bool operator== (Employee employee1, Employee employee2)
+        public static bool operator== (Employee<T> employee1, Employee<T> employee2)
         {
 
-            return employee1.Equals(employee2.Id);
+            return employee1.Id.Equals(employee2.Id);
         }
 
-        public static bool operator!= (Employee employee1, Employee employee2)
+        public static bool operator!= (Employee<T> employee1, Employee<T> employee2)
         {
 
-            return !(employee1.Equals(employee2.Id));
+            return !(employee1.Id.Equals(employee2.Id));
+        }
+
+        public override bool Equals(object o)
+        {
+            if (o == null)
+                return false;
+
+            var second = o as Employee<T>;
+
+            return second != null && Id == second.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id;
         }
 
 

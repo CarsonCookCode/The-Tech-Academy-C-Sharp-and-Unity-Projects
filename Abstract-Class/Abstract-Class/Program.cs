@@ -10,16 +10,37 @@ namespace Abstract_Class
     {
         static void Main(string[] args)
         {
-            Employee myEmployee1 = new Employee() { FirstName = "Sample", LastName = "Student", Hired = true, Id = 1 };
 
-            IQuittable myEmployee2 = new Employee() { FirstName = "Sample", LastName = "Student", Hired = true, Id = 2 };
+            Employee<string> myEmployee1 = new Employee<string>() 
+            { 
+                FirstName = "Sample",
+                LastName = "Student",
+                Hired = true,
+                Id = 1,
+                Things = {"Stapler", "Paper"}
+            };
 
-            Employee myEmployee3 = new Employee() { FirstName = "Sample", LastName = "Student", Hired = true, Id = 3 };
+            IQuittable myEmployee2 = new Employee<Person>() 
+            { 
+                FirstName = "Sample",
+                LastName = "Student",
+                Hired = true,
+                Id = 2 
+            };
+
+            Employee<int> myEmployee3 = new Employee<int>() 
+            { 
+                FirstName = "Sample",
+                LastName = "Student",
+                Hired = true,
+                Id = 3,
+                Things = { 1, 2, 3 } 
+            };
 
             myEmployee1.SayName();
 
 
-            Console.WriteLine(myEmployee1 == myEmployee3);
+            //Console.WriteLine(myEmployee1 == myEmployee3);
 
 
 
