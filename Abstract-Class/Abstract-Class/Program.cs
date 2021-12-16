@@ -17,7 +17,7 @@ namespace Abstract_Class
                 LastName = "Student",
                 Hired = true,
                 Id = 1,
-                Things = {"Stapler", "Paper"}
+                //Things = {"Stapler", "Paper"}
             };
 
             IQuittable myEmployee2 = new Employee<Person>() 
@@ -34,13 +34,13 @@ namespace Abstract_Class
                 LastName = "Student",
                 Hired = true,
                 Id = 3,
-                Things = { 1, 2, 3 } 
+                //Things = { 1, 2, 3 } 
             };
 
             myEmployee1.SayName();
 
 
-            //Console.WriteLine(myEmployee1 == myEmployee3);
+            Console.WriteLine(myEmployee1 == myEmployee3);
 
 
 

@@ -22,29 +22,29 @@ namespace Abstract_Class
         public static bool operator== (Employee<T> employee1, Employee<T> employee2)
         {
 
-            return employee1.Id.Equals(employee2.Id);
+            return employee1.Id == employee2.Id;
         }
 
         public static bool operator!= (Employee<T> employee1, Employee<T> employee2)
         {
 
-            return !(employee1.Id.Equals(employee2.Id));
+            return employee1.Id == employee2.Id;
         }
 
-        public override bool Equals(object o)
-        {
-            if (o == null)
-                return false;
+        //public override bool Equals(object o)
+        //{
+        //    if (o == null)
+        //        return false;
 
-            var second = o as Employee<T>;
+        //    var second = o as Employee<T>;
 
-            return second != null && Id == second.Id;
-        }
+        //    return second != null && Id == second.Id;
+        //}
 
-        public override int GetHashCode()
-        {
-            return Id;
-        }
+        //public override int GetHashCode()
+        //{
+        //    return Id;
+        //}
 
 
         public void Quit()
